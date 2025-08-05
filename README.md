@@ -24,33 +24,7 @@ The project includes **ready-to-run sample data files** and **example output rep
 
 ---
 
-## 📁 Project Structure
 
-ProShift-MCP-Multi-Agent-Workforce-Management/
-│
-├── data/
-│ ├── workers.csv
-│ ├── leave_requests.csv
-│ └── workload_schedule.csv
-│
-├── reports/
-│ ├── assignment_2024-08-08.csv
-│ ├── assignment_2024-08-08.txt
-│ └── ... (more daily reports)
-│
-├── agents/
-│ ├── init.py
-│ ├── absence_agent.py
-│ ├── zone_assignment_agent.py
-│ ├── up_agent.py
-│
-├── supervisor.py
-├── main.py
-├── README.md
-├── requirements.txt
-
-
----
 
 ## 📝 Data Files
 
