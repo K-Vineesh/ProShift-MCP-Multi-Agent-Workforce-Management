@@ -1,71 +1,147 @@
+# SmartShift MCP: Multi-Agent Collaborative Workforce Scheduling System
+
+Automate complex workforce scheduling, leave management, and fair task assignment using a modular, agent-driven Python system inspired by the Multi-Agent Collaborative Process (MCP) architecture.
 
 ---
 
-## Data Files
+## 📖 Project Overview
 
-- `workers.csv`: List of all warehouse workers, their status, zone preference, extra status, and history.
-- `leave_requests.csv`: List of worker leave requests (worker_id, date).
-- `workload_schedule.csv`: Per-day workforce needs (number of workers required per zone, prime day flag, etc.).
+**SmartShift MCP** is a production-grade simulation and automation tool for workforce management in dynamic environments like warehouses, logistics, or factories.  
+It uses specialized agents to independently handle staff availability, optimal zone assignments, and fair allocation of unproductive days, working together under a Supervisor for full process transparency and modularity.
 
-> **Sample data files are provided. Update or expand as needed for your scenario.**
+The project includes **ready-to-run sample data files** and **example output reports** for instant demonstration.
 
 ---
 
-## Installation
+## ⚙️ Key Features
 
-1. **Clone the repository**
+- **Multi-Agent Collaborative Process (MCP):** Each agent is responsible for a single step—absence handling, zone assignment, UP day allocation—collaborating through a supervisor orchestrator.
+- **Automated Absence and Leave Management:** Workers on leave are excluded automatically, with extra staff called in as needed.
+- **Dynamic Task & Zone Assignment:** Assigns available staff to the right zone/shift/task based on daily demand and workload.
+- **Unproductive (UP) Day Assignment:** Fairly distributes unproductive (off) days, avoiding repeated or unfair assignments.
+- **Extensive Daily Reporting:** Generates both CSV and human-readable text reports for each day.
+- **Extensible Architecture:** Add new “agents” for skills, fatigue, advanced fairness, or machine learning optimizations as your process grows.
+
+---
+
+## 📁 Project Structure
+
+ProShift-MCP-Multi-Agent-Workforce-Management/
+│
+├── data/
+│ ├── workers.csv
+│ ├── leave_requests.csv
+│ └── workload_schedule.csv
+│
+├── reports/
+│ ├── assignment_2024-08-08.csv
+│ ├── assignment_2024-08-08.txt
+│ └── ... (more daily reports)
+│
+├── agents/
+│ ├── init.py
+│ ├── absence_agent.py
+│ ├── zone_assignment_agent.py
+│ ├── up_agent.py
+│
+├── supervisor.py
+├── main.py
+├── README.md
+├── requirements.txt
+
+
+---
+
+## 📝 Data Files
+
+- **`workers.csv`** — List of all workers, including zone preferences, extra status, leave history, and more.
+- **`leave_requests.csv`** — Records of workers who have requested leave, by worker ID and date.
+- **`workload_schedule.csv`** — Daily requirements for each zone or task, including peak days (e.g., "prime day").
+
+> All **sample data files** are included in the `data/` folder for instant testing and demonstration.
+
+---
+
+## 📊 Sample Output
+
+Here’s an example of a daily assignment report (generated in both `.csv` and `.txt` formats in the `reports/` folder):
+
+
+> Several **sample output reports** are already available in the `reports/` folder.
+
+---
+
+## 🛠️ Installation
+
+1. **Clone the repository:**
     ```bash
-    git clone https://github.com/K-Vineesh/warehouse_automation.git
-    cd warehouse_automation
+    git clone https://github.com/K-Vineesh/ProShift-MCP-Multi-Agent-Workforce-Management.git
+    cd ProShift-MCP-Multi-Agent-Workforce-Management
+
     ```
 
-2. **(Optional but recommended) Create a virtual environment**
+2. **(Optional but recommended) Create and activate a virtual environment:**
     ```bash
     python -m venv venv
-    # Activate:
     # Windows:
     venv\Scripts\activate
-    # Mac/Linux:
+    # macOS/Linux:
     source venv/bin/activate
     ```
 
-3. **Install dependencies**
+3. **Install dependencies:**
     ```bash
     pip install -r requirements.txt
     ```
 
 ---
 
-## Usage
+## ▶️ Usage
 
-1. Place your data files (`workers.csv`, `leave_requests.csv`, `workload_schedule.csv`) in the `data/` folder.
+1. Make sure your data files (`workers.csv`, `leave_requests.csv`, `workload_schedule.csv`) are in the `data/` folder.  
+   *(Sample data already included for instant use!)*
 2. Run the automation:
     ```bash
     python main.py
     ```
-3. Reports (CSV and TXT) will be generated in the `reports/` folder for each day in your workload schedule.
+3. Find the generated assignment reports (both CSV and TXT) for each day in the `reports/` folder.
 
 ---
 
-## MCP (Multi-Agent Collaborative Process) Explained
+## 🤖 How the MCP Architecture Works
 
-This project uses a true **MCP architecture**, where:
+The process is modular and collaborative, mirroring real organizational structure:
 
-- Each agent (AbsenceAgent, ZoneAssignmentAgent, UPAgent) handles a specialized process step.
-- The Supervisor orchestrates the overall workflow, invoking each agent in order and collecting results.
-- Agents communicate by passing structured data, making the system flexible, testable, and easy to extend (add new agents for more rules, smarter logic, etc.).
-- Example: To add fatigue management or worker skill matching, simply add a new agent and call it from the Supervisor.
+- **AbsenceAgent**: Filters out workers on leave or unavailable.
+- **ZoneAssignmentAgent**: Assigns available workers to each shift/zone/task, using extra staff as needed to meet demand.
+- **UPAgent**: Assigns unproductive days (UP) fairly, so extra or unassigned staff have distributed time off.
+- **Supervisor**: Orchestrates the workflow—invokes agents in sequence, passes results along, gathers notes, and produces all output.
 
----
-
-## Extending the System
-
-- Add new agents for more complex rules (e.g., SkillAgent, FatigueAgent, SwapAgent).
-- Integrate with dashboards or notification services for real-time feedback.
-- Add fairness checks or machine-learning components for optimization.
-- Adjust the assignment logic as needed for your workflow.
+Agents are completely independent and can be swapped out or enhanced without touching the rest of the code.
 
 ---
 
-## Example Report (Human-Readable)
+## 💡 Extending the System
+
+- Add new agents (SkillAgent, FatigueAgent, SwapAgent, ComplianceAgent) for more advanced rules.
+- Integrate with dashboards, notification systems, or HR databases for real-time feedback.
+- Implement ML/AI-driven optimization or forecasting as additional agents.
+- Adapt the assignment rules to your industry or site's unique needs.
+
+---
+
+## 📃 License
+
+Licensed under the MIT License.
+
+---
+
+## 👤 Author
+
+Vineesh Koppay  
+Email: vineeshbijuselvi@gmail.com
+---
+
+**If you find this project useful, please star ⭐ or fork it!  
+Feel free to open issues or submit pull requests for improvements.**
 
