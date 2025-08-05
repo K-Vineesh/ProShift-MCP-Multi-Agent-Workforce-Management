@@ -1,0 +1,14 @@
+Date: 2025-08-10
+
+Zone: zone_A: Betty, Peggy, Xena, Rupert, Ivan
+Zone: zone_B: Judy, Trent, Alice, Carl, Mallory
+Zone: zone_C: Bob, Zara, Walter, Charlie
+Zone: sorting: Diana
+Zone: moving: Sybil
+Zone: swapping: Uma
+
+Unproductive Day (UP): Eve, Frank, Grace, Heidi, Ken, Lara, Niaj, Olivia, Quinn, Victor, Yuri, Aaron, Daisy, Extra1, Extra2, Extra3, Extra4, Extra5, Extra6, Extra7, Extra8, Extra9, Extra10
+
+Notes:
+- 40 workers available after leave handling.
+- 23 workers got unproductive (UP) day.
